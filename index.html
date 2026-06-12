@@ -33,7 +33,7 @@
             overflow-x: hidden;
         }
 
-        
+        /* ── NAVBAR ── */
         .navbar {
             background: var(--white) !important;
             border-bottom: 3px solid var(--pink-soft);
@@ -41,34 +41,23 @@
             min-height: 64px;
         }
         .navbar .container {
-            
             flex-wrap: nowrap;
             gap: 0;
             align-items: center;
-            padding-top: 6px;
-            padding-bottom: 6px;
-            padding-left: 12px;
-            padding-right: 12px;
+            padding: 6px 12px;
         }
 
-        
         .navbar-toggler-custom {
             background: none;
             border: none;
             cursor: pointer;
-            
             padding: 6px 6px 6px 0;
             flex-shrink: 0;
         }
-        .navbar-toggler-custom i {
-            font-size: 2rem;
-            color: var(--pink-deep);
-        }
+        .navbar-toggler-custom i { font-size: 2rem; color: var(--pink-deep); }
 
-        
         .navbar-brand-text {
             font-family: 'Dancing Script', cursive;
-           
             font-size: clamp(1.15rem, 3.5vw, 2rem);
             color: var(--pink-deep);
             font-weight: 700;
@@ -76,16 +65,13 @@
             flex-shrink: 0;
             text-decoration: none;
             line-height: 1;
-            
             margin-left: 4px;
             margin-right: 8px;
         }
 
-        
         .search-wrapper {
             flex: 1 1 auto;
             min-width: 0;
-            
             max-width: 340px;
             position: relative;
         }
@@ -93,7 +79,6 @@
             width: 100%;
             border-radius: 24px;
             border: 2px solid var(--pink-soft);
-            
             padding: 7px 36px 7px 14px;
             background: var(--pink-ultra);
             font-family: 'Dancing Script', cursive;
@@ -113,7 +98,6 @@
             pointer-events: none;
         }
 
-        
         .search-dropdown {
             position: absolute;
             top: calc(100% + 6px);
@@ -149,11 +133,9 @@
             text-align: center;
         }
 
-        
         .nav-icons {
             display: flex;
             align-items: center;
-            
             gap: 2px;
             flex-shrink: 0;
             margin-left: 6px;
@@ -165,7 +147,6 @@
         }
         .nav-icon-btn:hover { background: var(--pink-light); }
 
-        
         @media (max-width: 380px) {
             .nav-icon-location { display: none; }
             .nav-icon-recuerdos { display: none; }
@@ -175,7 +156,7 @@
             .nav-icon-btn { padding: 4px; }
         }
 
-        
+        /* ── SIDEBAR ── */
         .offcanvas {
             background: linear-gradient(160deg, #fff 0%, var(--pink-light) 100%);
             border-right: 3px solid var(--pink-soft);
@@ -202,27 +183,23 @@
             padding-left: 22px;
         }
 
-       
+        /* ── HERO ── */
         .hero-section {
             position: relative;
             min-height: 100vh;
             display: flex; align-items: center; justify-content: center;
             text-align: center; overflow: hidden;
         }
-        
         .hero-section::before {
             content: '';
             position: absolute; inset: 0;
-            
             background-image: url('https://res.cloudinary.com/dx4uldcud/image/upload/v1780267536/GATO_uudfky.png');
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
-            
             background-color: #F9C8D8;
             z-index: 0;
         }
-        
         .hero-section::after {
             content: '';
             position: absolute; inset: 0;
@@ -234,8 +211,6 @@
             );
             z-index: 1;
         }
-
-       
         .hero-content {
             position: relative; z-index: 10;
             padding: 24px 16px 60px;
@@ -244,8 +219,6 @@
             align-items: center; justify-content: flex-end;
             min-height: 100vh;
         }
-
-        
         .hero-card {
             background: rgba(255, 245, 250, 0.84);
             backdrop-filter: blur(12px);
@@ -259,7 +232,6 @@
             max-width: 620px;
             width: 100%;
         }
-
         .hero-title {
             font-family: 'Dancing Script', cursive;
             color: var(--pink-deep);
@@ -268,7 +240,6 @@
             margin-bottom: 4px;
             line-height: 1.05;
         }
-
         .hero-subtitle {
             color: var(--text-mid);
             font-weight: 700;
@@ -277,14 +248,12 @@
             margin-bottom: 16px;
             opacity: 0.8;
         }
-
         .hero-divider {
             width: 60px; height: 3px;
             background: linear-gradient(90deg, transparent, var(--pink-soft), transparent);
             border-radius: 2px;
             margin: 0 auto 16px;
         }
-
         .welcome-message {
             font-size: clamp(0.76rem, 2.2vw, 0.94rem);
             line-height: 1.85;
@@ -295,13 +264,11 @@
             margin: 0;
         }
 
-        
+        /* ── MAIN CONTENT ── */
         .main-content {
             background: linear-gradient(180deg, var(--pink-light) 0%, var(--pink-ultra) 100%);
         }
-        .container { position: relative; z-index: 1; }
 
-       
         .section-title-wrap { text-align: center; margin-bottom: 36px; }
         .section-title {
             font-family: 'Dancing Script', cursive;
@@ -322,28 +289,32 @@
 
         section { padding: 10px 0 40px; }
 
-        
+        /* ── MENU CARDS ── */
         .menu-card {
             border: 2px solid var(--pink-soft);
             border-radius: 20px;
             box-shadow: 0 4px 16px rgba(232,84,122,0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s, opacity 0.55s ease;
             margin-bottom: 20px;
             background: var(--white);
             overflow: hidden;
             height: 100%;
+            opacity: 0;
+            transform: translateY(28px);
+        }
+        .menu-card.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         .menu-card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-6px) !important;
             box-shadow: 0 12px 30px rgba(232,84,122,0.15);
         }
-        .card-img-top { height:220px; width:100%; object-fit:cover; object-position:center center; }
+        .card-img-top { height: 220px; width: 100%; object-fit: cover; object-position: center center; }
 
-        
         #hamburguesas .card-img-top,
-        #postres .card-img-top { height:260px; }
+        #postres .card-img-top { height: 260px; }
 
-        
         #sandwiches   .col-md-4:nth-child(1) .card-img-top { object-position: center 60%; }
         #sandwiches   .col-md-4:nth-child(2) .card-img-top { object-position: center center; }
         #sandwiches   .col-md-4:nth-child(3) .card-img-top { object-position: center 55%; }
@@ -359,6 +330,7 @@
         #bebidas      .col-md-4:nth-child(1) .card-img-top { object-position: center center; }
         #bebidas      .col-md-4:nth-child(2) .card-img-top { object-position: center 80%; }
         #bebidas      .col-md-4:nth-child(3) .card-img-top { object-position: center center; }
+
         .card-body-inner { padding: 16px; }
 
         .category-header {
@@ -377,7 +349,6 @@
             margin-bottom: 8px; font-size: 0.94rem; font-weight: 600;
         }
 
-        
         .queque-item {
             background: var(--white);
             border: 2px solid var(--pink-soft);
@@ -388,7 +359,7 @@
         }
         .queque-item:hover { border-color: var(--pink-deep); transform: translateY(-3px); }
 
-        
+        /* ── FOOTER ── */
         .footer {
             background: linear-gradient(160deg, var(--pink-deep) 0%, #C03060 100%);
             color: white;
@@ -397,35 +368,32 @@
         }
         .footer::before {
             content: '';
-            position: absolute; top:0; left:0; right:0; height:44px;
+            position: absolute; top: 0; left: 0; right: 0; height: 44px;
             background: var(--pink-ultra);
             clip-path: ellipse(55% 100% at 50% 0%);
         }
-        .footer::after {
-            content: '';
-            position: absolute; inset:0; pointer-events:none;
-            background-image:
-                radial-gradient(circle 5px at 15% 60%, rgba(255,240,244,0.4) 0%, transparent 100%),
-                radial-gradient(circle 4px at 30% 75%, rgba(255,255,255,0.3) 0%, transparent 100%),
-                radial-gradient(circle 6px at 55% 65%, rgba(255,240,244,0.3) 0%, transparent 100%),
-                radial-gradient(circle 4px at 75% 70%, rgba(255,255,255,0.3) 0%, transparent 100%),
-                radial-gradient(circle 5px at 88% 60%, rgba(255,240,244,0.3) 0%, transparent 100%);
-        }
 
-        
+        /* ── SCROLL TO TOP BTN (FIXED) ── */
         .scroll-top-btn {
-            position: fixed; bottom:24px; right:24px;
-            width:48px; height:48px; border-radius:50%;
+            position: fixed; bottom: 24px; right: 24px;
+            width: 48px; height: 48px; border-radius: 50%;
             background: var(--pink-deep); color: white;
-            border: none; font-size:1.2rem; cursor:pointer;
+            border: none; font-size: 1.2rem; cursor: pointer;
             box-shadow: 0 4px 15px rgba(232,84,122,0.4);
-            z-index:999; display:none;
-            align-items:center; justify-content:center;
-            transition:0.3s;
+            z-index: 999;
+            display: flex;          /* siempre flex, controlamos visibilidad con opacity/pointer-events */
+            align-items: center; justify-content: center;
+            transition: opacity 0.3s, transform 0.3s;
+            opacity: 0;
+            pointer-events: none;
         }
-        .scroll-top-btn:hover { background: var(--text-dark); transform:translateY(-2px); }
+        .scroll-top-btn.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .scroll-top-btn:hover { background: var(--text-dark); transform: translateY(-2px); }
 
-        
+        /* ── DOWNLOAD FAB ── */
         .download-fab {
             position: fixed; bottom: 84px; right: 24px;
             width: 48px; height: 48px; border-radius: 50%;
@@ -439,12 +407,13 @@
         }
         .download-fab:hover { transform: translateY(-3px) scale(1.08); box-shadow: 0 8px 22px rgba(232,84,122,0.5); }
 
+        /* ── MODAL CARTA ── */
         @keyframes cartaIn {
             from { opacity:0; transform: scale(0.85) translateY(20px); }
             to   { opacity:1; transform: scale(1) translateY(0); }
         }
-        #cartaModalOverlay.open { display: flex; }
-        
+
+        /* ── ALBUM / RECUERDOS ── */
         @media (min-width: 480px)  { #albumGrid { columns: 2; } }
         @media (min-width: 768px)  { #albumGrid { columns: 3; } }
 
@@ -456,11 +425,9 @@
             border: 2.5px solid var(--pink-soft);
             box-shadow: 0 6px 20px rgba(232,84,122,0.13);
             cursor: zoom-in;
-            
             opacity: 0;
             transform: translateY(40px) scale(0.96);
-            transition: opacity 0.55s ease, transform 0.55s ease,
-                        box-shadow 0.3s ease;
+            transition: opacity 0.55s ease, transform 0.55s ease, box-shadow 0.3s ease;
         }
         .album-photo.visible {
             opacity: 1;
@@ -477,82 +444,35 @@
         }
         .album-photo:hover img { transform: scale(1.04); }
 
+        /* ── LIGHTBOX ── */
         @keyframes lbIn {
             from { opacity:0; transform: scale(0.88); }
             to   { opacity:1; transform: scale(1); }
         }
-        #albumLightbox { display: none; }
-        #albumLightbox.open { display: flex; }
-        
-.menu-card {
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.55s ease, transform 0.55s ease,
-                box-shadow 0.3s ease, transform 0.3s ease;
-}
-.menu-card.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-.menu-card:hover {
-    transform: translateY(-6px) !important;
-}
-
-
-
-@media (max-width: 576px) {
-    .section-title-wrap::before,
-    .section-title-wrap::after {
-        width: 30px;
-        height: 30px;
-        opacity: 0.5;
-    }
-}
-
-.section-title-wrap::before,
-.section-title-wrap::after {
-    opacity: 0;
-    transition: opacity 0.7s ease, transform 0.7s ease;
-    transform: translateY(-60%) scale(0.7);
-}
-.section-title-wrap.title-visible::before {
-    opacity: 0.75;
-    transform: translateY(-60%) scale(1);
-}
-.section-title-wrap.title-visible::after {
-    opacity: 0.75;
-    transform: translateY(-60%) scale(1);
-    transition-delay: 0.15s;
-}
     </style>
 </head>
 <body>
 
-
+<!-- ===================== NAVBAR ===================== -->
 <nav class="navbar sticky-top shadow-sm">
     <div class="container d-flex align-items-center">
 
-        
         <button class="navbar-toggler-custom flex-shrink-0" type="button"
-                data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">
+                data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-label="Menú">
             <i class="bi bi-list"></i>
         </button>
 
-        
         <a href="#" class="navbar-brand-text">Mary's Dream</a>
 
-        
         <div class="search-wrapper mx-2">
-            <input type="text" id="searchInput" class="search-input" placeholder="Buscar plato...">
+            <input type="text" id="searchInput" class="search-input" placeholder="Buscar plato..." autocomplete="off">
             <i class="bi bi-search search-icon"></i>
             <div class="search-dropdown" id="searchDropdown"></div>
         </div>
 
-        
         <div class="nav-icons">
-            
             <div class="position-relative" id="waDropdownWrap">
-                <button class="nav-icon-btn" style="color:var(--whatsapp);" onclick="toggleWaMenu(event)">
+                <button class="nav-icon-btn" style="color:var(--whatsapp);" onclick="toggleWaMenu(event)" aria-label="WhatsApp">
                     <i class="bi bi-whatsapp fs-5"></i>
                 </button>
                 <div id="waDropdownMenu" style="
@@ -562,7 +482,7 @@
                     <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;
                                 font-weight:700;font-size:0.9rem;color:var(--pink-deep);
                                 border-bottom:1px solid var(--pink-light);
-                                background:var(--pink-ultra); letter-spacing:0.3px;">
+                                background:var(--pink-ultra);letter-spacing:0.3px;">
                         <i class="bi bi-info-circle" style="font-size:1.1rem;flex-shrink:0;"></i>
                         Para más información
                     </div>
@@ -581,12 +501,15 @@
                     </a>
                 </div>
             </div>
-            <a href="https://www.google.com/maps?q=-11.87127067569296,-77.12149681126392" target="_blank" rel="noopener" class="nav-icon-btn nav-icon-location" style="color:var(--location);">
+
+            <a href="https://www.google.com/maps?q=-11.87127067569296,-77.12149681126392"
+               target="_blank" rel="noopener"
+               class="nav-icon-btn nav-icon-location" style="color:var(--location);" aria-label="Ubicación">
                 <i class="bi bi-geo-alt-fill fs-5"></i>
             </a>
+
             <button class="nav-icon-btn nav-icon-recuerdos" style="color:var(--pink-deep);"
-                    onclick="irARecuerdos()"
-                    title="Recuerdos">
+                    onclick="irARecuerdos()" title="Recuerdos" aria-label="Recuerdos">
                 <i class="bi bi-camera-fill fs-5"></i>
             </button>
         </div>
@@ -597,40 +520,39 @@
 <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarMenu">
     <div class="offcanvas-header border-bottom">
         <h5 class="sidebar-brand mb-0">Mary's Dream</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
     </div>
     <div class="offcanvas-body d-flex flex-column">
         <nav class="nav flex-column mb-auto gap-1">
-            <a class="nav-link-custom" href="#sandwiches"   onclick="goTo('sandwiches')">🥪 Sandwiches &amp; Triples</a>
-            <a class="nav-link-custom" href="#hamburguesas" onclick="goTo('hamburguesas')">🍔 Hamburguesas &amp; Alitas</a>
-            <a class="nav-link-custom" href="#broaster"     onclick="goTo('broaster')">🍗 Pollo Broaster</a>
-            <a class="nav-link-custom" href="#salados"      onclick="goTo('salados')">🍽️ Salados &amp; Almuerzos</a>
-            <a class="nav-link-custom" href="#postres"      onclick="goTo('postres')">🍰 Postres &amp; Queques</a>
-            <a class="nav-link-custom" href="#bebidas"      onclick="goTo('bebidas')">🥤 Jugos &amp; Bebidas</a>
+            <a class="nav-link-custom" href="#sandwiches"   onclick="return goTo('sandwiches')">🥪 Sandwiches &amp; Triples</a>
+            <a class="nav-link-custom" href="#hamburguesas" onclick="return goTo('hamburguesas')">🍔 Hamburguesas &amp; Alitas</a>
+            <a class="nav-link-custom" href="#broaster"     onclick="return goTo('broaster')">🍗 Pollo Broaster</a>
+            <a class="nav-link-custom" href="#salados"      onclick="return goTo('salados')">🍽️ Salados &amp; Almuerzos</a>
+            <a class="nav-link-custom" href="#postres"      onclick="return goTo('postres')">🍰 Postres &amp; Queques</a>
+            <a class="nav-link-custom" href="#bebidas"      onclick="return goTo('bebidas')">🥤 Jugos &amp; Bebidas</a>
         </nav>
         <div class="mt-4 pt-3 border-top" style="border-color:var(--pink-soft) !important;">
-            
             <a href="https://wa.me/51948662261"
                class="btn w-100 mb-2 text-white fw-bold"
                target="_blank" rel="noopener"
-               style="background:var(--whatsapp); border-radius:14px;">
+               style="background:var(--whatsapp);border-radius:14px;">
                 <i class="bi bi-whatsapp me-2"></i>WhatsApp — 948 662 261
             </a>
             <a href="https://wa.me/51939467619"
                class="btn w-100 mb-2 text-white fw-bold"
                target="_blank" rel="noopener"
-               style="background:var(--whatsapp); border-radius:14px;">
+               style="background:var(--whatsapp);border-radius:14px;">
                 <i class="bi bi-whatsapp me-2"></i>WhatsApp — 939 467 619
             </a>
             <a href="https://www.google.com/maps?q=-11.87127067569296,-77.12149681126392"
                target="_blank" rel="noopener"
                class="btn w-100 mb-2 text-white fw-bold"
-               style="background:var(--location); border-radius:14px;">
+               style="background:var(--location);border-radius:14px;">
                 <i class="bi bi-geo-alt-fill me-2"></i>Av. Pedro Beltran 477
             </a>
             <button onclick="irARecuerdos(); closeSidebar();"
                class="btn w-100 text-white fw-bold"
-               style="background: linear-gradient(135deg, var(--pink-deep), #C03060); border-radius:14px; border:none;">
+               style="background:linear-gradient(135deg,var(--pink-deep),#C03060);border-radius:14px;border:none;">
                 <i class="bi bi-camera-fill me-2"></i>Recuerdos 📷
             </button>
         </div>
@@ -639,24 +561,8 @@
 
 <!-- ===================== HERO ===================== -->
 <section class="hero-section">
-    <div class="hero-clouds">
-        <div class="cloud cloud-1"></div>
-        <div class="cloud cloud-2"></div>
-        <div class="cloud cloud-3"></div>
-    </div>
-    <div class="hero-meadow"></div>
-    <div class="hero-flowers">
-        <div class="flower f1"></div><div class="flower f2"></div>
-        <div class="flower f3"></div><div class="flower f4"></div>
-        <div class="flower f5"></div><div class="flower f6"></div>
-        <div class="flower f7"></div><div class="flower f8"></div>
-        <div class="flower f9"></div><div class="flower f10"></div>
-        <div class="flower f11"></div><div class="flower f12"></div>
-        <div class="flower f13"></div><div class="flower f14"></div>
-        <div class="flower f15"></div>
-        <div class="petal p1"></div><div class="petal p2"></div>
-        <div class="petal p3"></div><div class="petal p4"></div>
-    </div>
+    <div class="hero-content">
+        
 </section>
 
 <!-- ===================== MENU ===================== -->
@@ -755,11 +661,11 @@
                     <img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779405500/1000115144.jpg_g0eqf8.jpg"
                          class="card-img-top"
                          alt="Pollo Broaster"
-                         style="height:340px; object-fit:cover; object-position:left center;">
+                         style="height:340px;object-fit:cover;object-position:left center;">
                 </div>
             </div>
             <div class="col-md-6">
-                <p class="fw-bold text-center mb-4" style="color:var(--text-mid); font-size:0.9rem; letter-spacing:1px;">
+                <p class="fw-bold text-center mb-4" style="color:var(--text-mid);font-size:0.9rem;letter-spacing:1px;">
                     INCLUYE PAPAS FRITAS, ENSALADA Y CREMAS
                 </p>
                 <div class="row g-3">
@@ -805,7 +711,6 @@
                     <div class="card-body-inner">
                         <h5 class="category-header">ALMUERZO DIARIO</h5>
                         <div class="menu-list-item"><span>Entrada + Segundo + Bebida + Postre</span><span class="price-tag">S/ 12.00</span></div>
-                        
                     </div>
                 </div>
             </div>
@@ -820,7 +725,6 @@
             </h2>
         </div>
         <div class="row g-4">
-            <!-- Tortas y Bocaditos -->
             <div class="col-md-6">
                 <div class="menu-card">
                     <img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779406187/1000115079.jpg_vticbv.jpg" class="card-img-top" alt="Tortas y Bocaditos">
@@ -839,7 +743,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Queques -->
             <div class="col-md-6">
                 <div class="menu-card">
                     <img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779406545/1000115103.jpg_ms3l4m.jpg" class="card-img-top" alt="Queques">
@@ -852,65 +755,30 @@
                         <div class="menu-list-item"><span>Chocolate</span><span class="price-tag">S/ 3.50</span></div>
                         <div class="menu-list-item"><span>Zanahoria</span><span class="price-tag">S/ 3.50</span></div>
                         <div class="menu-list-item"><span>Yogurt griego</span><span class="price-tag">S/ 3.50</span></div>
-
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- MENSAJE TORTAS Y BOCADITOS -->
+    <!-- MENSAJE TORTAS -->
     <div class="container mb-5">
         <div style="
-            background: linear-gradient(135deg, rgba(255,245,250,0.95) 0%, rgba(253,232,238,0.95) 100%);
-            border: 2px solid var(--pink-soft);
-            border-radius: 20px;
-            padding: 28px 32px;
-            box-shadow: 0 4px 20px rgba(232,84,122,0.10);
-            position: relative;
-            overflow: hidden;
-        ">
-            
-            <div style="
-                position:absolute; top:-18px; right:-18px;
-                font-size: 5rem; opacity: 0.07; line-height:1;
-                pointer-events:none; user-select:none;">🍰</div>
-            <div style="
-                position:absolute; bottom:-18px; left:-10px;
-                font-size: 4rem; opacity: 0.07; line-height:1;
-                pointer-events:none; user-select:none;">🎂</div>
-
-            
-            <div style="
-                width: 60px; height: 3px;
-                background: linear-gradient(90deg, transparent, var(--pink-soft), transparent);
-                border-radius: 2px;
-                margin: 0 auto 18px;
-            "></div>
-
-            <p style="
-                font-family: 'Dancing Script', cursive;
-                color: var(--text-mid);
-                font-size: clamp(1.15rem, 3vw, 1.45rem);
-                font-weight: 700;
-                line-height: 1.9;
-                text-align: center;
-                margin: 0;
-            ">
+            background:linear-gradient(135deg,rgba(255,245,250,0.95) 0%,rgba(253,232,238,0.95) 100%);
+            border:2px solid var(--pink-soft);border-radius:20px;
+            padding:28px 32px;box-shadow:0 4px 20px rgba(232,84,122,0.10);
+            position:relative;overflow:hidden;">
+            <div style="position:absolute;top:-18px;right:-18px;font-size:5rem;opacity:0.07;line-height:1;pointer-events:none;user-select:none;">🍰</div>
+            <div style="position:absolute;bottom:-18px;left:-10px;font-size:4rem;opacity:0.07;line-height:1;pointer-events:none;user-select:none;">🎂</div>
+            <div style="width:60px;height:3px;background:linear-gradient(90deg,transparent,var(--pink-soft),transparent);border-radius:2px;margin:0 auto 18px;"></div>
+            <p style="font-family:'Dancing Script',cursive;color:var(--text-mid);font-size:clamp(1.15rem,3vw,1.45rem);font-weight:700;line-height:1.9;text-align:center;margin:0;">
                 🌸 Para tus días especiales, también te podemos engreír con deliciosas
-                <span style="color:var(--pink-deep); font-weight:800;">tortas y bocaditos</span>
+                <span style="color:var(--pink-deep);font-weight:800;">tortas y bocaditos</span>
                 preparados con mucho cariño. Cada detalle está pensado para que disfrutes momentos únicos,
                 ya sea en cumpleaños, celebraciones o cualquier ocasión que merezca algo
-                <span style="color:var(--pink-deep); font-weight:800;">dulce y especial</span>. 🌸
+                <span style="color:var(--pink-deep);font-weight:800;">dulce y especial</span>. 🌸
             </p>
-
-            
-            <div style="
-                width: 60px; height: 3px;
-                background: linear-gradient(90deg, transparent, var(--pink-soft), transparent);
-                border-radius: 2px;
-                margin: 18px auto 0;
-            "></div>
+            <div style="width:60px;height:3px;background:linear-gradient(90deg,transparent,var(--pink-soft),transparent);border-radius:2px;margin:18px auto 0;"></div>
         </div>
     </div>
 
@@ -926,7 +794,7 @@
                 <div class="menu-card">
                     <img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779406262/1000115137.jpg_q1nagt.jpg" class="card-img-top" alt="Jugos">
                     <div class="card-body-inner">
-                        <h5 class="category-header">JUGOS </h5>
+                        <h5 class="category-header">JUGOS</h5>
                         <div class="menu-list-item"><span>Papaya</span><span class="price-tag">S/ 9.00</span></div>
                         <div class="menu-list-item"><span>Piña</span><span class="price-tag">S/ 9.00</span></div>
                         <div class="menu-list-item"><span>Mango</span><span class="price-tag">S/ 9.00</span></div>
@@ -942,7 +810,7 @@
                 <div class="menu-card">
                     <img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779406274/1000115142.jpg_qrlcyp.jpg" class="card-img-top" alt="Batidos y Frapes">
                     <div class="card-body-inner">
-                        <h5 class="category-header">BATIDOS </h5>
+                        <h5 class="category-header">BATIDOS</h5>
                         <div class="menu-list-item"><span>Fresa con leche</span><span class="price-tag">S/ 10.00</span></div>
                         <div class="menu-list-item"><span>Plátano con leche</span><span class="price-tag">S/ 10.00</span></div>
                         <div class="menu-list-item"><span>Papaya con leche</span><span class="price-tag">S/ 10.00</span></div>
@@ -950,7 +818,7 @@
                         <div class="menu-list-item"><span>Mango con leche</span><span class="price-tag">S/ 10.00</span></div>
                         <div class="menu-list-item"><span>Especial</span><span class="price-tag">S/ 10.00</span></div>
                         <div class="menu-list-item"><span>Guanábana con leche</span><span class="price-tag">S/ 10.00</span></div>
-                        <h5 class="category-header">FRAPES (S/ 14.00)</h5>
+                        <h5 class="category-header">FRAPES</h5>
                         <div class="menu-list-item"><span>Moca</span><span class="price-tag">S/ 14.00</span></div>
                         <div class="menu-list-item"><span>Fresa</span><span class="price-tag">S/ 14.00</span></div>
                         <div class="menu-list-item"><span>Mango</span><span class="price-tag">S/ 14.00</span></div>
@@ -964,7 +832,7 @@
                 <div class="menu-card">
                     <img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779509065/20260521_083757.jpg_xlp6tc.jpg" class="card-img-top" alt="Refrescos">
                     <div class="card-body-inner">
-                        <h5 class="category-header">TRIPLE FRUTA </h5>
+                        <h5 class="category-header">TRIPLE FRUTA</h5>
                         <div class="menu-list-item"><span>Plátano, Piña, Papaya</span><span class="price-tag">S/ 10.00</span></div>
                         <div class="menu-list-item"><span>Fresa, Plátano, Arándano</span><span class="price-tag">S/ 10.00</span></div>
                         <div class="menu-list-item"><span>Piña, Fresa y Plátano</span><span class="price-tag">S/ 10.00</span></div>
@@ -989,22 +857,15 @@
   </div>
 </div>
 
-<!-- ===================== RECUERDOS SECTION ===================== -->
+<!-- ===================== RECUERDOS ===================== -->
 <section id="recuerdos" style="
-    background: linear-gradient(180deg, var(--pink-ultra) 0%, #fff0f6 40%, var(--pink-light) 100%);
-    padding: 70px 0 80px;
-    position: relative;
-    overflow: hidden;">
+    background:linear-gradient(180deg,var(--pink-ultra) 0%,#fff0f6 40%,var(--pink-light) 100%);
+    padding:70px 0 80px;position:relative;overflow:hidden;">
 
-    
-    <div style="position:absolute;top:-60px;left:-80px;width:260px;height:260px;
-                border-radius:50%;background:rgba(232,84,122,0.07);pointer-events:none;"></div>
-    <div style="position:absolute;bottom:-80px;right:-60px;width:320px;height:320px;
-                border-radius:50%;background:rgba(232,84,122,0.06);pointer-events:none;"></div>
+    <div style="position:absolute;top:-60px;left:-80px;width:260px;height:260px;border-radius:50%;background:rgba(232,84,122,0.07);pointer-events:none;"></div>
+    <div style="position:absolute;bottom:-80px;right:-60px;width:320px;height:320px;border-radius:50%;background:rgba(232,84,122,0.06);pointer-events:none;"></div>
 
     <div class="container" style="position:relative;z-index:1;">
-
-        
         <div class="section-title-wrap" style="margin-bottom:10px;">
             <h2 class="section-title" style="font-size:clamp(2rem,6vw,3rem);">
                 <span class="leaf-deco">🌸</span>&nbsp;Recuerdos&nbsp;<span class="leaf-deco">🌸</span>
@@ -1015,94 +876,34 @@
             NUESTROS MOMENTOS &amp; PLATOS ESPECIALES
         </p>
 
-        
-        <div id="albumGrid" style="
-            columns: 2; gap: 14px;
-            column-gap: 14px;">
-
-            <div class="album-photo">
-                <img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779508854/1000121672.jpg_vwkah3.jpg" alt="Descripción">
-            </div>
-            <div class="album-photo">
-                <img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779508896/1000121676.jpg_gyj9mu.jpg" alt="Descripción">
-            </div>
-            <div class="album-photo">
-                <img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779508907/1000121678.jpg_lqfefg.jpg" alt="Descripción">
-            </div>
-            <div class="album-photo">
-                <img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779508919/1000121625.jpg_ajikf1.jpg" alt="Descripción">
-            </div>
-            <div class="album-photo">
-                <img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779508929/1000121632.jpg_wqhi3t.jpg" alt="Descripción">
-            </div>
-            <div class="album-photo">
-                <img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779508985/1000121641.jpg_cgp5ko.jpg" alt="Descripción">
-            </div>  
-            <div class="album-photo">
-                <img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779508995/1000121584.jpg_vburiw.jpg" alt="Descripción">
-            </div>
-            <div class="album-photo">
-                <img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779509005/1000121518.jpg_b6rfon.jpg" alt="Descripción">
-            </div>
-            <div class="album-photo">
-                <img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779509015/1000121630.jpg_wjazej.jpg" alt="Descripción">
-            </div>
-            <div class="album-photo">
-                <img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779509025/1000121664.jpg_rmglg3.jpg" alt="Descripción">
-            </div>
-            <div class="album-photo">
-                <img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779509057/1000121674.jpg_pgc0q5.jpg" alt="Descripción">
-            </div>
-            
-            <div class="album-photo">
-                <img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779509098/1000115214.jpg_pdugfw.jpg" alt="Descripción">
-            </div>
-            <div class="album-photo">
-                <img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779509110/1000115208.jpg_i2bwyp.jpg" alt="Descripción">
-            </div>
-            <div class="album-photo">
-                <img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779509120/1000115244.jpg_eeor19.jpg" alt="Descripción">
-            </div>
-            <div class="album-photo">
-                <img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779509159/1000115248.jpg_cr12uj.jpg" alt="Descripción">
-            </div>
-            <div class="album-photo">
-                <img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779509172/1000115246.jpg_vzdx5g.jpg" alt="Descripción">
-            </div>
-            <div class="album-photo">
-                <img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779509185/1000115206.jpg_n89sw7.jpg" alt="Descripción">
-            </div>
-            <div class="album-photo">
-                <img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779509195/1000115223.jpg_oulk2a.jpg" alt="Descripción">
-            </div>
-            <div class="album-photo">
-                <img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779509210/1000115179.jpg_atqqqz.jpg" alt="Descripción">
-            </div>
-            <div class="album-photo">
-                <img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779509237/1000115258.jpg_adyini.jpg" alt="Descripción">
-            </div>
-            <div class="album-photo">
-                <img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779509255/1000115251.jpg_nlvquh.jpg" alt="Descripción">
-            </div>
-            <div class="album-photo">
-                <img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779509271/1000115260.jpg_okf7wz.jpg" alt="Descripción">
-            </div>
-
-
-            
-            <div id="albumEmpty" style="
-                column-span: all;
-                text-align:center;padding:60px 20px;
-                color:var(--pink-mid);font-style:italic;font-weight:600;opacity:0.55;">
-                <div style="font-size:3rem;margin-bottom:14px;">📷</div>
-                Aquí aparecerán las fotos de tu local 🌸<br>
-                <small style="font-size:0.8rem;">Agrega tus imágenes en el código</small>
-            </div>
+        <div id="albumGrid" style="columns:2;gap:14px;column-gap:14px;">
+            <div class="album-photo"><img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779508854/1000121672.jpg_vwkah3.jpg" alt="Recuerdo 1"></div>
+            <div class="album-photo"><img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779508896/1000121676.jpg_gyj9mu.jpg" alt="Recuerdo 2"></div>
+            <div class="album-photo"><img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779508907/1000121678.jpg_lqfefg.jpg" alt="Recuerdo 3"></div>
+            <div class="album-photo"><img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779508919/1000121625.jpg_ajikf1.jpg" alt="Recuerdo 4"></div>
+            <div class="album-photo"><img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779508929/1000121632.jpg_wqhi3t.jpg" alt="Recuerdo 5"></div>
+            <div class="album-photo"><img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779508985/1000121641.jpg_cgp5ko.jpg" alt="Recuerdo 6"></div>
+            <div class="album-photo"><img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779508995/1000121584.jpg_vburiw.jpg" alt="Recuerdo 7"></div>
+            <div class="album-photo"><img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779509005/1000121518.jpg_b6rfon.jpg" alt="Recuerdo 8"></div>
+            <div class="album-photo"><img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779509015/1000121630.jpg_wjazej.jpg" alt="Recuerdo 9"></div>
+            <div class="album-photo"><img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779509025/1000121664.jpg_rmglg3.jpg" alt="Recuerdo 10"></div>
+            <div class="album-photo"><img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779509057/1000121674.jpg_pgc0q5.jpg" alt="Recuerdo 11"></div>
+            <div class="album-photo"><img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779509098/1000115214.jpg_pdugfw.jpg" alt="Recuerdo 12"></div>
+            <div class="album-photo"><img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779509110/1000115208.jpg_i2bwyp.jpg" alt="Recuerdo 13"></div>
+            <div class="album-photo"><img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779509120/1000115244.jpg_eeor19.jpg" alt="Recuerdo 14"></div>
+            <div class="album-photo"><img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779509159/1000115248.jpg_cr12uj.jpg" alt="Recuerdo 15"></div>
+            <div class="album-photo"><img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779509172/1000115246.jpg_vzdx5g.jpg" alt="Recuerdo 16"></div>
+            <div class="album-photo"><img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779509185/1000115206.jpg_n89sw7.jpg" alt="Recuerdo 17"></div>
+            <div class="album-photo"><img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779509195/1000115223.jpg_oulk2a.jpg" alt="Recuerdo 18"></div>
+            <div class="album-photo"><img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779509210/1000115179.jpg_atqqqz.jpg" alt="Recuerdo 19"></div>
+            <div class="album-photo"><img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779509237/1000115258.jpg_adyini.jpg" alt="Recuerdo 20"></div>
+            <div class="album-photo"><img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779509255/1000115251.jpg_nlvquh.jpg" alt="Recuerdo 21"></div>
+            <div class="album-photo"><img src="https://res.cloudinary.com/dx4uldcud/image/upload/v1779509271/1000115260.jpg_okf7wz.jpg" alt="Recuerdo 22"></div>
         </div>
     </div>
 </section>
 
-
+<!-- LIGHTBOX -->
 <div id="albumLightbox" onclick="closeLightbox()" style="
     display:none;position:fixed;inset:0;z-index:10001;
     background:rgba(0,0,0,0.88);align-items:center;justify-content:center;cursor:zoom-out;">
@@ -1117,57 +918,57 @@
     <img src="" id="lightboxImg" alt="Foto ampliada" style="
         max-width:92vw;max-height:88vh;border-radius:18px;
         box-shadow:0 24px 70px rgba(0,0,0,0.55);
-        animation: lbIn 0.28s ease both;">
+        animation:lbIn 0.28s ease both;">
 </div>
 
 <!-- ===================== FOOTER ===================== -->
 <footer class="footer text-center">
-    <div class="container" style="position:relative; z-index:1; padding-top:24px;">
-        <h2 style="font-family:'Dancing Script',cursive; font-size:2.5rem; text-shadow:1px 2px 6px rgba(0,0,0,0.2);" class="mb-1">
+    <div class="container" style="position:relative;z-index:1;padding-top:24px;">
+        <h2 style="font-family:'Dancing Script',cursive;font-size:2.5rem;text-shadow:1px 2px 6px rgba(0,0,0,0.2);" class="mb-1">
             Mary's Dream
         </h2>
-        <p class="mb-1 opacity-75 fw-600" style="letter-spacing:1px;">FUENTE DE SODA &amp; RESTAURANT</p>
-        <p class="mb-0 opacity-60" style="font-size:.85rem;">© 2026 Mary's Dream — Hecho con amor para ti</p>
-        <small class="opacity-40">Lima, Perú 🌸</small>
+        <p class="mb-1 fw-bold" style="letter-spacing:1px;opacity:0.8;">FUENTE DE SODA &amp; RESTAURANT</p>
+        <p class="mb-0" style="font-size:.85rem;opacity:0.65;">© 2026 Mary's Dream — Hecho con amor para ti</p>
+        <small style="opacity:0.45;">Lima, Perú 🌸</small>
     </div>
 </footer>
 
-
-<!-- BOTON DESCARGA CARTA -->
-<button class="download-fab" id="downloadFab" onclick="toggleCartaModal()" title="Descargar Carta">
+<!-- DOWNLOAD FAB -->
+<button class="download-fab" id="downloadFab" onclick="toggleCartaModal()" title="Descargar Carta" aria-label="Descargar Carta">
     <i class="bi bi-file-earmark-arrow-down"></i>
 </button>
 
 <!-- SCROLL TOP -->
-<button class="scroll-top-btn" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+<button class="scroll-top-btn" id="scrollTopBtn"
+        onclick="window.scrollTo({top:0,behavior:'smooth'})"
+        aria-label="Volver arriba">
     <i class="bi bi-chevron-up"></i>
 </button>
 
 <!-- MODAL DESCARGA CARTA -->
 <div id="cartaModalOverlay" onclick="closeCartaIfOutside(event)" style="
-    display:none; position:fixed; inset:0; z-index:11000;
-    background:rgba(90,26,42,0.5); backdrop-filter:blur(5px);
-    align-items:center; justify-content:center;">
-    <div style="
-        background:white; border-radius:28px;
+    display:none;position:fixed;inset:0;z-index:11000;
+    background:rgba(90,26,42,0.5);backdrop-filter:blur(5px);
+    align-items:center;justify-content:center;">
+    <div onclick="event.stopPropagation()" style="
+        background:white;border-radius:28px;
         border:2px solid var(--pink-soft);
         box-shadow:0 20px 60px rgba(232,84,122,0.3);
         padding:36px 32px 32px;
-        width:min(92vw, 380px);
-        text-align:center; position:relative;
-        animation: cartaIn 0.35s cubic-bezier(.34,1.56,.64,1) both;">
+        width:min(92vw,380px);
+        text-align:center;position:relative;
+        animation:cartaIn 0.35s cubic-bezier(.34,1.56,.64,1) both;">
 
-        <!-- Cerrar -->
         <button onclick="toggleCartaModal()" style="
             position:absolute;top:14px;right:16px;
             background:var(--pink-soft);border:none;border-radius:50%;
             width:34px;height:34px;cursor:pointer;
             color:var(--pink-deep);font-size:1rem;
-            display:flex;align-items:center;justify-content:center;">
+            display:flex;align-items:center;justify-content:center;"
+            aria-label="Cerrar">
             <i class="bi bi-x-lg"></i>
         </button>
 
-        <!-- Ícono -->
         <div style="
             width:72px;height:72px;border-radius:50%;
             background:linear-gradient(135deg,var(--pink-soft),var(--pink-light));
@@ -1177,23 +978,18 @@
             <i class="bi bi-file-earmark-text" style="font-size:2rem;color:var(--pink-deep);"></i>
         </div>
 
-        <!-- Título -->
-        <h3 style="
-            font-family:'Dancing Script',cursive;
-            color:var(--pink-deep);font-size:1.9rem;
-            margin-bottom:6px;">Nuestra Carta</h3>
-        <p style="
-            color:var(--text-mid);font-size:0.82rem;
-            font-weight:700;letter-spacing:1.5px;
-            margin-bottom:6px;opacity:0.7;">
+        <h3 style="font-family:'Dancing Script',cursive;color:var(--pink-deep);font-size:1.9rem;margin-bottom:6px;">
+            Nuestra Carta
+        </h3>
+        <p style="color:var(--text-mid);font-size:0.82rem;font-weight:700;letter-spacing:1.5px;margin-bottom:6px;opacity:0.7;">
             MARY'S DREAM — FUENTE DE SODA &amp; RESTAURANT
         </p>
         <p style="color:var(--text-dark);font-size:0.9rem;font-weight:600;margin-bottom:24px;opacity:0.8;">
             Descarga nuestra carta completa y llévala siempre contigo 🌸
         </p>
 
-        <!-- Botón descargar -->
-        <a href="Carta_Marys_Dream.pdf" download="Carta_Marys_Dream.pdf"
+        <!-- ✅ CORRECCIÓN: ruta relativa al PDF en la misma carpeta -->
+        <a href="Carta_Marys_Dream.pdf.pdf" download="Carta_Marys_Dream.pdf."
            style="
             display:inline-flex;align-items:center;gap:10px;
             background:linear-gradient(135deg,var(--pink-deep),#C03060);
@@ -1204,11 +1000,10 @@
             transition:transform 0.2s,box-shadow 0.2s;"
            onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 10px 28px rgba(232,84,122,0.45)'"
            onmouseout="this.style.transform='';this.style.boxShadow='0 6px 20px rgba(232,84,122,0.35)'">
-            <i class="bi bi-download"></i> Descargar
+            <i class="bi bi-download"></i> Descargar Carta
         </a>
     </div>
 </div>
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
@@ -1231,107 +1026,98 @@ document.addEventListener('click', function(e) {
    MENU DATA — fuente de verdad para el buscador
 ============================================================ */
 const MENU = [
-    // Sandwiches
-    { name: "Triple — Pollo, jamón y queso",         price: "S/ 8.00",  section: "sandwiches"   },
-    { name: "Triple — Pollo, queso y palta",          price: "S/ 8.00",  section: "sandwiches"   },
-    { name: "Triple — Pollo, duraznos y queso",       price: "S/ 8.00",  section: "sandwiches"   },
-    { name: "Triple — Pollo, huevo y aceitunas",      price: "S/ 8.00",  section: "sandwiches"   },
-    { name: "Enrollado Simple",                        price: "S/ 10.00", section: "sandwiches"   },
-    { name: "Enrollado Mixto",                         price: "S/ 10.00", section: "sandwiches"   },
-    { name: "Croissant — Pollo, pecanas y apio",      price: "S/ 8.00",  section: "sandwiches"   },
-    { name: "Croissant — Pollo, duraznos y pecanas",  price: "S/ 8.00",  section: "sandwiches"   },
-    { name: "Croissant Mixto — Doble jamón y queso",  price: "S/ 8.00",  section: "sandwiches"   },
-    { name: "Croissant Pan Horneado",                  price: "S/ 8.00",  section: "sandwiches"   },
-    // Hamburguesas
-    { name: "Hamburguesa Simple — Carne artesanal",   price: "S/ 15.00", section: "hamburguesas" },
-    { name: "Hamburguesa Simple — Filete de Pollo",   price: "S/ 15.00", section: "hamburguesas" },
-    { name: "Hamburguesa Royal",                       price: "S/ 17.00", section: "hamburguesas" },
-    { name: "Hamburguesa Cheese",                      price: "S/ 16.00", section: "hamburguesas" },
-    { name: "Alitas Acevichadas (6 und.)",             price: "S/ 18.00", section: "hamburguesas" },
-    { name: "Alitas BBQ (6 und.)",                     price: "S/ 18.00", section: "hamburguesas" },
-    // Broaster
-    { name: "Pollo Broaster — Pecho",                  price: "S/ 14.00", section: "broaster"     },
-    { name: "Pollo Broaster — Pierna",                 price: "S/ 12.00", section: "broaster"     },
-    { name: "Pollo Broaster — Ala",                    price: "S/ 10.00", section: "broaster"     },
-    // Salados
-    { name: "Empanada de Pollo",                       price: "S/ 5.00",  section: "salados"      },
-    { name: "Empanada de Carne",                       price: "S/ 5.00",  section: "salados"      },
-    { name: "Empanada Hawaiana",                       price: "S/ 5.00",  section: "salados"      },
-    { name: "Lasagna (450g) — Carne y Pollo",          price: "S/ 21.00", section: "salados"      },
-    { name: "Almuerzo Diario — Entrada + Segundo + Bebida + Postre",     price: "S/ 12.00", section: "salados"      },
-    
-    // Postres
-    { name: "Cuchareables de Chocolate",               price: "S/ 8.00",  section: "postres"      },
-    { name: "Tres Leches Vainilla",                    price: "S/ 8.00",  section: "postres"      },
-    { name: "Tres Leches Chocolate",                   price: "S/ 8.00",  section: "postres"      },
-    { name: "Cheesecake de Óreo",                      price: "S/ 8.00",  section: "postres"      },
-    { name: "Cheesecake de Arándanos",                 price: "S/ 8.00",  section: "postres"      },
-    { name: "Cheesecake de Aguaymanto",                price: "S/ 8.00",  section: "postres"      },
-    { name: "Cheesecake de Maracuyá",                  price: "S/ 8.00",  section: "postres"      },
-    { name: "Crema Volteada",                          price: "S/ 7.00",  section: "postres"      },
-    { name: "Tartaletas de Fresa, Manzana y Maracuyá", price: "S/ 7.00 c/u", section: "postres"  },
-    { name: "Ensalada de Frutas",                      price: "S/ 10.00", section: "postres"      },
-    { name: "Yogurt griego",                           price: "S/ 3.50",  section: "postres"      },
-    { name: "Queque Maracumango",                      price: "S/ 3.50",  section: "postres"      },
-    { name: "Queque Plátano",                          price: "S/ 3.50",  section: "postres"      },
-    { name: "Queque Marmoleado",                       price: "S/ 3.50",  section: "postres"      },
-    { name: "Queque Maracuyá",                         price: "S/ 3.50",  section: "postres"      },
-    { name: "Queque Chocolate",                        price: "S/ 3.50",  section: "postres"      },
-    { name: "Queque Zanahoria",                        price: "S/ 3.50",  section: "postres"      },
-    // Bebidas
-    { name: "Jugo de Papaya",                          price: "S/ 9.00",  section: "bebidas"      },
-    { name: "Jugo de Piña",                            price: "S/ 9.00",  section: "bebidas"      },
-    { name: "Jugo de Mango",                           price: "S/ 9.00",  section: "bebidas"      },
-    { name: "Jugo Maracumango",                        price: "S/ 9.00",  section: "bebidas"      },
-    { name: "Jugo de Fresa",                           price: "S/ 9.00",  section: "bebidas"      },
-    { name: "Jugo Surtido",                            price: "S/ 9.00",  section: "bebidas"      },
-    { name: "Jugo de Guanábana",                       price: "S/ 9.00",  section: "bebidas"      },
-    { name: "Jugo de Chirimoya",                       price: "S/ 9.00",  section: "bebidas"      },
-    { name: "Batido de Fresa con leche",               price: "S/ 10.00", section: "bebidas"      },
-    { name: "Batido de Plátano con leche",             price: "S/ 10.00", section: "bebidas"      },
-    { name: "Batido de Papaya con leche",              price: "S/ 10.00", section: "bebidas"      },
-    { name: "Batido de Lúcuma con leche",              price: "S/ 10.00", section: "bebidas"      },
-    { name: "Batido de Mango con leche",               price: "S/ 10.00", section: "bebidas"      },
-    { name: "Batido Especial",                         price: "S/ 10.00", section: "bebidas"      },
-    { name: "Batido de Guanábana con leche",           price: "S/ 10.00", section: "bebidas"      },
-    { name: "Frape Moca",                              price: "S/ 14.00", section: "bebidas"      },
-    { name: "Frape Fresa",                             price: "S/ 14.00", section: "bebidas"      },
-    { name: "Frape Mango",                             price: "S/ 14.00", section: "bebidas"      },
-    { name: "Energisante Maracucoffe",                 price: "S/ 10.00", section: "bebidas"      },
-    { name: "Energisante Mangocoffe",                  price: "S/ 10.00", section: "bebidas"      },
-    { name: "Triple Fruta — Plátano, Piña, Papaya",   price: "S/ 10.00", section: "bebidas"      },
-    { name: "Triple Fruta — Fresa, Plátano, Arándano", price: "S/ 10.00", section: "bebidas"     },
-    { name: "Triple Fruta — Piña, Fresa y Plátano",   price: "S/ 10.00", section: "bebidas"      },
-    { name: "Refresco ½ Litro (Piña/Mango/Maracuyá/Chicha/Sandía)", price: "S/ 4.00", section: "bebidas" },
-    { name: "Refresco 1 Litro (Piña/Mango/Maracuyá/Chicha/Sandía)", price: "S/ 8.00", section: "bebidas" },
-    { name: "Inka Cola / Coca Cola personal",          price: "S/ 4.00",  section: "bebidas"      },
-    { name: "Guaraná / Fanta personal",                price: "S/ 3.00",  section: "bebidas"      },
-    { name: "Café Pasado",                             price: "S/ 4.00",  section: "bebidas"      },
-    { name: "Anís / Manzanilla / Té",                  price: "S/ 2.00",  section: "bebidas"      },
-    { name: "Té Frutos Rojos",                         price: "S/ 4.00",  section: "bebidas"      },
-    { name: "Agua de Jamaica",                         price: "S/ 3.00",  section: "bebidas"      },
-    { name: "Café con leche",                          price: "S/ 5.00",  section: "bebidas"      },
-    { name: "Chocolate con leche",                     price: "S/ 5.00",  section: "bebidas"      },
+    { name: "Triple — Pollo, jamón y queso",            price: "S/ 8.00",      section: "sandwiches"   },
+    { name: "Triple — Pollo, queso y palta",            price: "S/ 8.00",      section: "sandwiches"   },
+    { name: "Triple — Pollo, duraznos y queso",         price: "S/ 8.00",      section: "sandwiches"   },
+    { name: "Triple — Pollo, huevo y aceitunas",        price: "S/ 8.00",      section: "sandwiches"   },
+    { name: "Enrollado Simple",                          price: "S/ 10.00",     section: "sandwiches"   },
+    { name: "Enrollado Mixto",                           price: "S/ 10.00",     section: "sandwiches"   },
+    { name: "Croissant — Pollo, pecanas y apio",        price: "S/ 8.00",      section: "sandwiches"   },
+    { name: "Croissant — Pollo, duraznos y pecanas",    price: "S/ 8.00",      section: "sandwiches"   },
+    { name: "Croissant Mixto — Doble jamón y queso",    price: "S/ 8.00",      section: "sandwiches"   },
+    { name: "Croissant Pan Horneado",                    price: "S/ 8.00",      section: "sandwiches"   },
+    { name: "Hamburguesa Simple — Carne artesanal",     price: "S/ 15.00",     section: "hamburguesas" },
+    { name: "Hamburguesa Simple — Filete de Pollo",     price: "S/ 15.00",     section: "hamburguesas" },
+    { name: "Hamburguesa Royal",                         price: "S/ 17.00",     section: "hamburguesas" },
+    { name: "Hamburguesa Cheese",                        price: "S/ 16.00",     section: "hamburguesas" },
+    { name: "Alitas Acevichadas (6 und.)",               price: "S/ 18.00",     section: "hamburguesas" },
+    { name: "Alitas BBQ (6 und.)",                       price: "S/ 18.00",     section: "hamburguesas" },
+    { name: "Pollo Broaster — Pecho",                    price: "S/ 14.00",     section: "broaster"     },
+    { name: "Pollo Broaster — Pierna",                   price: "S/ 12.00",     section: "broaster"     },
+    { name: "Pollo Broaster — Ala",                      price: "S/ 10.00",     section: "broaster"     },
+    { name: "Empanada de Pollo",                         price: "S/ 5.00",      section: "salados"      },
+    { name: "Empanada de Carne",                         price: "S/ 5.00",      section: "salados"      },
+    { name: "Empanada Hawaiana",                         price: "S/ 5.00",      section: "salados"      },
+    { name: "Lasagna (450g) — Carne y Pollo",            price: "S/ 21.00",     section: "salados"      },
+    { name: "Almuerzo Diario",                           price: "S/ 12.00",     section: "salados"      },
+    { name: "Cuchareables de Chocolate",                 price: "S/ 8.00",      section: "postres"      },
+    { name: "Tres Leches Vainilla",                      price: "S/ 8.00",      section: "postres"      },
+    { name: "Tres Leches Chocolate",                     price: "S/ 8.00",      section: "postres"      },
+    { name: "Cheesecake de Óreo",                        price: "S/ 8.00",      section: "postres"      },
+    { name: "Cheesecake de Arándanos",                   price: "S/ 8.00",      section: "postres"      },
+    { name: "Cheesecake de Aguaymanto",                  price: "S/ 8.00",      section: "postres"      },
+    { name: "Cheesecake de Maracuyá",                    price: "S/ 8.00",      section: "postres"      },
+    { name: "Crema Volteada",                            price: "S/ 7.00",      section: "postres"      },
+    { name: "Tartaletas de Fresa, Manzana y Maracuyá",  price: "S/ 7.00 c/u",  section: "postres"      },
+    { name: "Ensalada de Frutas",                        price: "S/ 10.00",     section: "postres"      },
+    { name: "Queque Maracumango",                        price: "S/ 3.50",      section: "postres"      },
+    { name: "Queque Plátano",                            price: "S/ 3.50",      section: "postres"      },
+    { name: "Queque Marmoleado",                         price: "S/ 3.50",      section: "postres"      },
+    { name: "Queque Maracuyá",                           price: "S/ 3.50",      section: "postres"      },
+    { name: "Queque Chocolate",                          price: "S/ 3.50",      section: "postres"      },
+    { name: "Queque Zanahoria",                          price: "S/ 3.50",      section: "postres"      },
+    { name: "Yogurt griego",                             price: "S/ 3.50",      section: "postres"      },
+    { name: "Jugo de Papaya",                            price: "S/ 9.00",      section: "bebidas"      },
+    { name: "Jugo de Piña",                              price: "S/ 9.00",      section: "bebidas"      },
+    { name: "Jugo de Mango",                             price: "S/ 9.00",      section: "bebidas"      },
+    { name: "Jugo Maracumango",                          price: "S/ 9.00",      section: "bebidas"      },
+    { name: "Jugo de Fresa",                             price: "S/ 9.00",      section: "bebidas"      },
+    { name: "Jugo Surtido",                              price: "S/ 9.00",      section: "bebidas"      },
+    { name: "Jugo de Guanábana",                         price: "S/ 9.00",      section: "bebidas"      },
+    { name: "Jugo de Chirimoya",                         price: "S/ 9.00",      section: "bebidas"      },
+    { name: "Batido de Fresa con leche",                 price: "S/ 10.00",     section: "bebidas"      },
+    { name: "Batido de Plátano con leche",               price: "S/ 10.00",     section: "bebidas"      },
+    { name: "Batido de Papaya con leche",                price: "S/ 10.00",     section: "bebidas"      },
+    { name: "Batido de Lúcuma con leche",                price: "S/ 10.00",     section: "bebidas"      },
+    { name: "Batido de Mango con leche",                 price: "S/ 10.00",     section: "bebidas"      },
+    { name: "Batido Especial",                           price: "S/ 10.00",     section: "bebidas"      },
+    { name: "Batido de Guanábana con leche",             price: "S/ 10.00",     section: "bebidas"      },
+    { name: "Frape Moca",                                price: "S/ 14.00",     section: "bebidas"      },
+    { name: "Frape Fresa",                               price: "S/ 14.00",     section: "bebidas"      },
+    { name: "Frape Mango",                               price: "S/ 14.00",     section: "bebidas"      },
+    { name: "Energisante Maracucoffe",                   price: "S/ 10.00",     section: "bebidas"      },
+    { name: "Energisante Mangocoffe",                    price: "S/ 10.00",     section: "bebidas"      },
+    { name: "Triple Fruta — Plátano, Piña, Papaya",     price: "S/ 10.00",     section: "bebidas"      },
+    { name: "Triple Fruta — Fresa, Plátano, Arándano",  price: "S/ 10.00",     section: "bebidas"      },
+    { name: "Triple Fruta — Piña, Fresa y Plátano",     price: "S/ 10.00",     section: "bebidas"      },
+    { name: "Refresco ½ Litro",                          price: "S/ 4.00",      section: "bebidas"      },
+    { name: "Refresco 1 Litro",                          price: "S/ 8.00",      section: "bebidas"      },
+    { name: "Inka Cola / Coca Cola personal",            price: "S/ 4.00",      section: "bebidas"      },
+    { name: "Guaraná / Fanta personal",                  price: "S/ 3.00",      section: "bebidas"      },
+    { name: "Café Pasado",                               price: "S/ 4.00",      section: "bebidas"      },
+    { name: "Anís / Manzanilla / Té",                    price: "S/ 2.00",      section: "bebidas"      },
+    { name: "Té Frutos Rojos",                           price: "S/ 4.00",      section: "bebidas"      },
+    { name: "Agua de Jamaica",                           price: "S/ 3.00",      section: "bebidas"      },
+    { name: "Café con leche",                            price: "S/ 5.00",      section: "bebidas"      },
+    { name: "Chocolate con leche",                       price: "S/ 5.00",      section: "bebidas"      },
 ];
 
 /* ============================================================
    SMART SEARCH
 ============================================================ */
-const searchInput  = document.getElementById('searchInput');
-const searchDrop   = document.getElementById('searchDropdown');
+const searchInput = document.getElementById('searchInput');
+const searchDrop  = document.getElementById('searchDropdown');
 
 function normalize(str) {
-    return str.toLowerCase()
-              .normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 }
 
-function showDropdown(results, query) {
-    searchDrop.innerHTML = '';
+searchInput.addEventListener('input', function () {
+    const q = normalize(this.value.trim());
+    if (!q) { searchDrop.classList.remove('open'); searchDrop.innerHTML = ''; return; }
 
-    if (query.trim() === '') {
-        searchDrop.classList.remove('open');
-        return;
-    }
+    const results = MENU.filter(item => normalize(item.name).includes(q));
+    searchDrop.innerHTML = '';
 
     if (results.length === 0) {
         searchDrop.innerHTML = '<div class="search-no-result">😔 No encontrado</div>';
@@ -1339,28 +1125,21 @@ function showDropdown(results, query) {
         results.slice(0, 8).forEach(item => {
             const div = document.createElement('div');
             div.className = 'search-result-item';
-            div.innerHTML = `<span>${item.name}</span><span class="item-price">${item.price}</span>`;
+            div.innerHTML = '<span>' + item.name + '</span><span class="item-price">' + item.price + '</span>';
             div.addEventListener('click', () => {
                 closeSidebar();
                 goTo(item.section);
                 searchInput.value = '';
                 searchDrop.classList.remove('open');
+                searchDrop.innerHTML = '';
             });
             searchDrop.appendChild(div);
         });
     }
     searchDrop.classList.add('open');
-}
-
-searchInput.addEventListener('input', function () {
-    const q = normalize(this.value.trim());
-    if (!q) { searchDrop.classList.remove('open'); return; }
-    const results = MENU.filter(item => normalize(item.name).includes(q));
-    showDropdown(results, q);
 });
 
-// Close dropdown when clicking outside
-document.addEventListener('click', e => {
+document.addEventListener('click', function(e) {
     if (!e.target.closest('.search-wrapper')) {
         searchDrop.classList.remove('open');
     }
@@ -1393,20 +1172,27 @@ function goTo(sectionId) {
     } else {
         scrollNow();
     }
-
-    return false; // prevent default href jump
+    return false; // previene el salto nativo del href="#..."
 }
 
 /* ============================================================
-   SCROLL TO TOP
+   SCROLL TO TOP  (usa clase .visible, no display:none)
 ============================================================ */
+window.addEventListener('scroll', () => {
+    const btn = document.getElementById('scrollTopBtn');
+    if (window.scrollY > 400) {
+        btn.classList.add('visible');
+    } else {
+        btn.classList.remove('visible');
+    }
+});
+
 /* ============================================================
    DESCARGA CARTA — modal
 ============================================================ */
 function toggleCartaModal() {
     const overlay = document.getElementById('cartaModalOverlay');
-    const isOpen  = overlay.classList.contains('open');
-    overlay.classList.toggle('open');
+    const isOpen  = overlay.style.display === 'flex';
     overlay.style.display = isOpen ? 'none' : 'flex';
 }
 function closeCartaIfOutside(e) {
@@ -1416,26 +1202,22 @@ function closeCartaIfOutside(e) {
 }
 
 /* ============================================================
-   RECUERDOS — scroll animation & lightbox
+   LIGHTBOX
 ============================================================ */
 function openLightbox(src) {
     const lb = document.getElementById('albumLightbox');
     document.getElementById('lightboxImg').src = src;
-    lb.classList.add('open');
     lb.style.display = 'flex';
 }
 function closeLightbox() {
-    const lb = document.getElementById('albumLightbox');
-    lb.classList.remove('open');
-    lb.style.display = 'none';
+    document.getElementById('albumLightbox').style.display = 'none';
 }
 
-// Attach lightbox click to album photos + scroll animation
+/* ============================================================
+   RECUERDOS — scroll animation & lightbox
+============================================================ */
 document.addEventListener('DOMContentLoaded', function() {
-    // Hide empty placeholder if there are real photos
     const photos = document.querySelectorAll('.album-photo');
-    const empty  = document.getElementById('albumEmpty');
-    if (photos.length > 0 && empty) empty.style.display = 'none';
 
     // Lightbox
     photos.forEach(function(card) {
@@ -1445,7 +1227,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Scroll-in animation with staggered delay (first load)
+    // Scroll-in animation
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
             if (entry.isIntersecting) {
@@ -1456,59 +1238,48 @@ document.addEventListener('DOMContentLoaded', function() {
                 observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.08 });
+    }, { threshold: 0.05 });
 
     const grid = document.getElementById('albumGrid');
     if (grid) observer.observe(grid);
-});
 
-// Menu cards fade-up
-const cardObserver = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            cardObserver.unobserve(entry.target);
-        }
+    // Menu cards fade-up
+    const cardObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                cardObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.menu-card').forEach(function(card, i) {
+        card.style.transitionDelay = (i % 3) * 80 + 'ms';
+        cardObserver.observe(card);
     });
-}, { threshold: 0.12 });
-
-document.querySelectorAll('.menu-card').forEach(function(card, i) {
-    card.style.transitionDelay = (i % 3) * 80 + 'ms';
-    cardObserver.observe(card);
 });
-/* Función del botón cámara:
-   resetea las fotos a invisible, hace scroll, y las anima de nuevo */
+
+/* Botón cámara — ir a Recuerdos con re-animación */
 function irARecuerdos() {
     const photos = document.querySelectorAll('.album-photo');
-
-    // 1. Quitar clase visible para que vuelvan a estar ocultas
     photos.forEach(function(c) { c.classList.remove('visible'); });
 
-    // 2. Scroll a la sección
     document.getElementById('recuerdos').scrollIntoView({ behavior: 'smooth' });
 
-    // 3. Esperar que termine el scroll (~700ms) y animar por filas
     setTimeout(function() {
-        // Agrupar por fila según posición top
         var rows = {};
         photos.forEach(function(p) {
-            var t = Math.round(p.getBoundingClientRect().top);
+            var t = Math.round(p.getBoundingClientRect().top + window.scrollY);
             if (!rows[t]) rows[t] = [];
             rows[t].push(p);
         });
-        // Animar fila por fila con 160ms entre filas
         Object.keys(rows).sort(function(a,b){ return a - b; }).forEach(function(top, rowIdx) {
             rows[top].forEach(function(p) {
-                setTimeout(function() { p.classList.add('visible'); }, rowIdx * 160);
+                setTimeout(function() { p.classList.add('visible'); }, rowIdx * 140);
             });
         });
-    }, 750);
+    }, 800);
 }
-
-window.addEventListener('scroll', () => {
-    document.getElementById('scrollTopBtn')
-            .classList.toggle('visible', window.scrollY > 400);
-});
 </script>
 </body>
 </html>
